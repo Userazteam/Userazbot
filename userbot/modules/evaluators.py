@@ -31,16 +31,16 @@ async def evaluate(query):
         if evaluation:
             if isinstance(evaluation, str):
                 if len(evaluation) >= 4096:
-                    file = open("brend.txt", "w+")
+                    file = open("useraz.txt", "w+")
                     file.write(evaluation)
                     file.close()
                     await query.client.send_file(
                         query.chat_id,
-                        "brend.txt",
+                        "useraz.txt",
                         reply_to=query.id,
                         caption=LANG['BIG_FILE'],
                     )
-                    remove("brend.txt")
+                    remove("useraz.txt")
                     return
                 await query.edit(f"**{LANG['QUERY']}: **\n`"
                                  f"{expression}"
@@ -100,16 +100,16 @@ async def run(run_q):
 
     if result:
         if len(result) > 4096:
-            file = open("brend.txt", "w+")
+            file = open("useraz.txt", "w+")
             file.write(result)
             file.close()
             await run_q.client.send_file(
                 run_q.chat_id,
-                "brend.txt",
+                "useraz.txt",
                 reply_to=run_q.id,
                 caption=LANG['BIG_FILE'],
             )
-            remove("brend.txt")
+            remove("useraz.txt")
             return
         await run_q.edit(f"**{LANG['QUERY']}: **\n`"
                          f"{codepre}"
@@ -159,16 +159,16 @@ async def terminal_runner(term):
         + str(stderr.decode().strip())
 
     if len(result) > 4096:
-        output = open("brend.txt", "w+")
+        output = open("useraz.txt", "w+")
         output.write(result)
         output.close()
         await term.client.send_file(
             term.chat_id,
-            "brend.txt",
+            "useraz.txt",
             reply_to=term.id,
             caption=LANG['BIG_FILE'],
         )
-        remove("brend.txt")
+        remove("useraz.txt")
         return
 
     if uid == 0:
@@ -185,7 +185,7 @@ async def terminal_runner(term):
 CmdHelp('evaluators').add_command(
     'eval', '<əməliyyat>', 'Mini ifadələri qiymətləndirin.', 'eval 2+3'
 ).add_command(
-    'exec', '<python kodu>', 'Kiçik pyton əmrlərini icra edin.', 'exec print(\"BrendUserbottan Salamlar!\")'
+    'exec', '<python kodu>', 'Kiçik pyton əmrlərini icra edin.', 'exec print(\"USER-AZ  Salamlayır!\")'
 ).add_command(
     'term', '<əməliyyat>', 'Serverinizdə bash əmrlərini və skriptlərini işə salın.', 'term ls'
 ).add()
