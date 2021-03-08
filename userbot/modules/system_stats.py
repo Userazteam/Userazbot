@@ -69,7 +69,7 @@ async def bot_ver(event):
                          "`")
     else:
         await event.edit(
-            "Brend Userbot⚡️"
+            "USER-AZ⚡️"
         )
 
 
@@ -122,7 +122,7 @@ async def amialive(e):
         await e.edit(PLUGIN_MESAJLAR['alive'].format(
             telethon=version.__version__,
             python=python_version(),
-            brend=BREND_VERSION,
+            useraz=USERAZ_VERSION,
             plugin=len(CMD_HELP),
             id=me.id,
             username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
@@ -136,7 +136,7 @@ async def amialive(e):
             PLUGIN_MESAJLAR['alive'].text = PLUGIN_MESAJLAR['alive'].text.format(
                 telethon=version.__version__,
                 python=python_version(),
-                brend=BREND_VERSION,
+                useraz=USERAZ_VERSION,
                 plugin=len(CMD_HELP),
                 id=me.id,
                 username='@' + me.username if me.username else f'[{me.first_name}](tg://user?id={me.id})',
@@ -157,5 +157,5 @@ CmdHelp('system_stats').add_command(
 ).add_command(
     'pip', '<modül(ler)>', 'Pip modullarında axtarış edər.'
 ).add_command(
-    'alive', None, 'Brend botunun işləyib isləmədiyini göstərər.'
+    'alive', None, 'USER-AZ botunun işləyib isləmədiyini göstərər.'
 ).add()
