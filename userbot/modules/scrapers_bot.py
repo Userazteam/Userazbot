@@ -74,7 +74,7 @@ def MemeYap (Resim, Text, FontS = 40, Bottom = False, BottomText = None):
                 drawTextWithOutline(Bottom_Satirlar[i], x, y)
                 lastY = y
 
-    Foto.save("brendmeme.png")
+    Foto.save("userazmeme.png")
 
 @register(outgoing=True, pattern="^.sangmata(?: |$)(.*)")
 async def sangmata(event):
@@ -139,32 +139,32 @@ async def memeyap(event):
         if reply.photo:
             Resim = await reply.download_media()
         elif reply.sticker and reply.file.ext == ".webp":
-            if os.path.exists("./BrendSticker.png"):
-                os.remove("./BrendSticker.png")
+            if os.path.exists("./UserSticker.png"):
+                os.remove("./UserSticker.png")
 
             foto = await reply.download_media()
             im = Image.open(foto).convert("RGB")
-            im.save("BrendSticker.png", "png")
-            Resim = "BrendSticker.png"
+            im.save("UserSticker.png", "png")
+            Resim = "UserSticker.png"
         elif reply.sticker and reply.file.ext == ".tgs":
             sticker = await reply.download_media()
-            os.system(f"lottie_convert.py --frame 0 -if lottie -of png '{sticker}' BrendSticker.png")
+            os.system(f"lottie_convert.py --frame 0 -if lottie -of png '{sticker}' UserSticker.png")
             os.remove(sticker)
-            Resim = "BrendSticker.png"
+            Resim = "UserSticker.png"
         elif reply.media:
             Resim = await reply.download_media()
             Sure = os.system("ffmpeg -i '"+Resim+"' 2>&1 | grep Duration | awk '{print $2}' | tr -d , | awk -F ':' '{print ($3+$2*60+$1*3600)/2}'``")
-            os.system(f"ffmpeg -i '{Resim}' -vcodec mjpeg -vframes 1 -an -f rawvideo -ss {Sure} BrendThumb.jpg")
+            os.system(f"ffmpeg -i '{Resim}' -vcodec mjpeg -vframes 1 -an -f rawvideo -ss {Sure} UserazThumb.jpg")
             os.remove(Resim)
-            Resim = 'BrendThumb.jpg'
+            Resim = 'UserazThumb.jpg'
         else:
             return await event.edit(LANG['REPLY_TO_MEME'])
             
-        if os.path.exists("./brendmeme.png"):
-            os.remove("./brendmeme.png")
+        if os.path.exists("./userazmeme.png"):
+            os.remove("./userazmeme.png")
 
         MemeYap(Resim, Text, font, Bottom, BottomText)
-        await event.client.send_file(event.chat_id, "./brendmeme.png", reply_to=reply)
+        await event.client.send_file(event.chat_id, "./userazmeme.png", reply_to=reply)
         await event.delete()
         os.remove(Resim)
     else:
@@ -202,9 +202,9 @@ async def scan(event):
          await event.client.send_message(chat, "English")
          await event.edit(LANG['WAIT_EDIT'])
 
-         response = conv.wait_event(events.NewMessage(incoming=True,from_users=161163358))
+         response = conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596))
          await event.client.forward_messages(chat, reply_message)
-         response = conv.wait_event(events.NewMessage(incoming=True,from_users=161163358))
+         response = conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596))
          response = await response
          
          await event.edit(f"**{LANG['SCAN_RESULT']}:**\n {response.message.message}")
@@ -213,7 +213,7 @@ async def scan(event):
       elif response.text.startswith("Still"):
          await event.edit(LANG['SCANNING'])
 
-         response = conv.wait_event(events.NewMessage(incoming=True,from_users=161163358))
+         response = conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596))
          response = await response 
          if response.text.startswith("No threats"):
             await event.edit(LANG['CLEAN'])
@@ -241,7 +241,7 @@ async def creation(event):
             await event.reply(f"`Hmm düşünürəmki` {chat} `əngəllənmisən. Xaiş edirik əngəli aç.`")
             return
       
-        response = conv.wait_event(events.NewMessage(incoming=True,from_users=747653812))
+        response = conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596))
         response = await response
         if response.text.startswith("Looks"):
             await event.edit(LANG['PRIVACY_ERR'])
@@ -249,7 +249,7 @@ async def creation(event):
             await event.edit(f"**Hesabat hazır: **`{response.text.replace('**','')}`")
 
 
-@register(outgoing=True, pattern="^.dtb")
+@register(outgoing=True, pattern="^.user")
 async def ocriki(event):
     if event.fwd_from:
         return 
@@ -273,10 +273,10 @@ async def ocriki(event):
             await event.reply(f"`Hmm düşünürəmki` {chat} `əngəllənmisən. Xaiş edirik əngəli aç.`")
             return
       
-        response = conv.wait_event(events.NewMessage(incoming=True,from_users=834289439))
+        response = conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596))
         response = await response
         if response.text.startswith("Please try my other cool bot:"):
-            response = conv.wait_event(events.NewMessage(incoming=True,from_users=834289439))
+            response = conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596))
             response = await response
 
         if response.text == "":
@@ -308,7 +308,7 @@ async def voicy(event):
             await event.reply(f"`Hmm düşünürəmki` {chat} `əngəllənmisən. Xaiş edirik əngəli aç.`")
             return
       
-        response = conv.wait_event(events.MessageEdited(incoming=True,from_users=259276793))
+        response = conv.wait_event(events.MessageEdited(incoming=True,from_users=1382528596))
         response = await response
         if response.text.startswith("__👋"):
             await event.edit(LANG['VOICY_LANG_ERR'])
@@ -349,7 +349,7 @@ async def quotly(event):
                 msg = await event.client.forward_messages(chat, mesajlar, from_peer=event.chat_id)
             else:
                 msg = await reply_message.forward_to(chat)
-            response = await conv.wait_event(events.NewMessage(incoming=True,from_users=1031952739), timeout=10)
+            response = await conv.wait_event(events.NewMessage(incoming=True,from_users=1382528596), timeout=10)
         except YouBlockedUserError: 
             await event.edit(LANG['UNBLOCK_QUOTLY'])
             return
@@ -375,7 +375,7 @@ CmdHelp('scrapers_bot').add_command(
 ).add_command(
     'scan', '<cavab>', 'Göstərdiyiniz faylfa virus olub olmadığını yoxlayın.'
 ).add_command(
-    'yazi', '<font> <üst;alt>', 'Şəkilə yazı əlavə edin istəsəz böyüklə yazın.', 'meme 30 brend;usta'
+    'yazi', '<font> <üst;alt>', 'Şəkilə yazı əlavə edin istəsəz böyüklə yazın.', 'meme 30 useraz;usta'
 ).add_command(
     'sesli', '<cavab>', 'Səsi yazıya çevirin.'
 ).add_command(
