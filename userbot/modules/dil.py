@@ -18,13 +18,13 @@ async def dil(event):
             reply = await event.get_reply_message()
             dosya = await reply.download_media()
 
-            if ((len(reply.file.name.split(".")) >= 2) and (not reply.file.name.split(".")[1] == "brendjson")):
-                return await event.edit("`Xahiş olunur etibarlı bir` **BrendJSON** `faylı verin!`")
+            if ((len(reply.file.name.split(".")) >= 2) and (not reply.file.name.split(".")[1] == "userazjson")):
+                return await event.edit("`Xahiş olunur etibarlı bir` **UserazJSON** `faylı verin!`")
 
             try:
                 dosya = loads(open(dosya, "r").read())
             except JSONDecodeError:
-                return await event.edit("`Xahiş olunur etibarlı bir` **BrendJSON** `faylı verin!`")
+                return await event.edit("`Xahiş olunur etibarlı bir` **UserazJSON** `faylı verin!`")
 
             await event.edit(f"`{dosya['LANGUAGE']}` `dili yüklənir...`")
             pchannel = await event.client.get_entity(PLUGIN_CHANNEL_ID)
@@ -41,15 +41,15 @@ async def dil(event):
         await event.edit("`Dil faylı bilgiləri gətirilir... Biraz gözləyin.`")
         if event.is_reply:
             reply = await event.get_reply_message()
-            if ((len(reply.file.name.split(".")) >= 1) and (not reply.file.name.split(".")[1] == "brendjson")):
-                return await event.edit("`Xahiş olunur etibarlı bir` **BrendJSON** `faylı verin!`")
+            if ((len(reply.file.name.split(".")) >= 1) and (not reply.file.name.split(".")[1] == "userazjson")):
+                return await event.edit("`Xahiş olunur etibarlı bir` **UserazJSON** `faylı verin!`")
 
             dosya = await reply.download_media()
 
             try:
                 dosya = loads(open(dosya, "r").read())
             except JSONDecodeError:
-                return await event.edit("`Xahiş olunur etibarlı bir` **BrendJSON** `faylı verin!`")
+                return await event.edit("`Xahiş olunur etibarlı bir` **UserazJSON** `faylı verin!`")
 
             await event.edit(
                 f"**Dil: **`{dosya['LANGUAGE']}`\n"
@@ -66,7 +66,7 @@ async def dil(event):
             f"**Dil Kodu: **`{LANGUAGE_JSON['LANGCODE']}`\n"
             f"**Tərcüməçi: **`{LANGUAGE_JSON ['AUTHOR']}`\n"
 
-            f"\n\nDiğer diller için @BrendDil kanalına bakabilirsiniz."
+            f"\n\nDiğer diller için @UserazDil kanalına bakabilirsiniz."
         )
 
 CmdHelp('dil').add_command(
