@@ -33,7 +33,7 @@ async def cevir(event):
 
         im = Image.open(foto).convert("RGB")
         im.save("sticker.png", "png")
-        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@BrendUserBot `ilə fotoya çevrildi.`")
+        await event.client.send_file(event.chat_id, "sticker.png", reply_to=rep_msg, caption="@Userazbot `ilə fotoya çevrildi.`")
 
         await event.delete()
         os.remove("sticker.png")
@@ -56,13 +56,13 @@ async def cevir(event):
         await event.edit(LANG['EFECTING'])
         if efekt in EFEKTLER:
             indir = await rep_msg.download_media()
-            ses = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' {KOMUT[efekt]} brend.mp3")
+            ses = await asyncio.create_subprocess_shell(f"ffmpeg -i '{indir}' {KOMUT[efekt]} useraz.mp3")
             await ses.communicate()
-            await event.client.send_file(event.chat_id, "brend.mp3", reply_to=rep_msg, caption="@BrendUserBot `ilə effekt tətbiq olundu.`")
+            await event.client.send_file(event.chat_id, "useraz.mp3", reply_to=rep_msg, caption="@Userazbot `ilə effekt tətbiq olundu.`")
             
             await event.delete()
             os.remove(indir)
-            os.remove("brend.mp3")
+            os.remove("useraz.mp3")
         else:
             await event.edit(LANG['NOT_FOUND_EFECT'])
     elif islem == "gif":
@@ -84,15 +84,15 @@ async def cevir(event):
         await event.edit(f"`{LANG['UPLOADING_GIF']}`")
 
         try:
-            await event.client.send_file(event.chat_id, "brend.gif",reply_to=rep_msg, caption=LANG['WITH_BREND_GIF'])
+            await event.client.send_file(event.chat_id, "useraz.gif",reply_to=rep_msg, caption=LANG['WITH_USERAZ_GIF'])
         except:
             await event.edit(LANG['ERROR'])
             await event.delete()
-            os.remove("brend.gif")
+            os.remove("useraz.gif")
             os.remove(video)
         finally:
             await event.delete()
-            os.remove("brend.gif")
+            os.remove("useraz.gif")
             os.remove(video)
     elif islem == "mp3":
         rep_msg = await event.get_reply_message()
@@ -103,18 +103,18 @@ async def cevir(event):
         video = io.BytesIO()
         video = await event.client.download_media(rep_msg.video)
         gif = await asyncio.create_subprocess_shell(
-            f"ffmpeg -y -i '{video}' -vn -b:a 128k -c:a libmp3lame brend.mp3")
+            f"ffmpeg -y -i '{video}' -vn -b:a 128k -c:a libmp3lame useraz.mp3")
         await gif.communicate()
         await event.edit('`Səs yüklənir...`')
         
         try:
-            await event.client.send_file(event.chat_id, "brend.mp3",reply_to=rep_msg, caption='@BrendUserBot ilə səsə çevrildi.')
+            await event.client.send_file(event.chat_id, "useraz.mp3",reply_to=rep_msg, caption='@userazbot ilə səsə çevrildi.')
         except:
             os.remove(video)
             return await event.edit('`Səsə çevrilmədi!`')
 
         await event.delete()
-        os.remove("brend.mp3")
+        os.remove("useraz.mp3")
         os.remove(video)
     else:
         await event.edit(LANG['INVALID_COMMAND'])
