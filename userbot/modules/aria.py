@@ -115,7 +115,7 @@ async def resume_all(event):
 
 @register(outgoing=True, pattern="^.ashow(?: |$)(.*)")
 async def show_all(event):
-    output = "brend.txt"
+    output = "useraz.txt"
     downloads = aria2.get_downloads()
     msg = ""
     for download in downloads:
