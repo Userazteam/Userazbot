@@ -13,7 +13,7 @@
 
 ## Qurulum
 ### Asan yol
-[Youtube](https://www.youtube.com/watch?v=mUUQ53TYqI0)
+[Youtube](https://www.youtube.com/watch?v=jJlH56saM4A)
 
 **Android:** Termuxu açın ve bu kodu yapışdırın: <br> `bash <(curl -L https://cutt.ly/ezguHNZ)`
 
