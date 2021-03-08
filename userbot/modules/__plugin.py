@@ -1,10 +1,3 @@
-#Tercumeden istifade eleme serefsiz
-#Tercumeden istifade edenin atasiyam
-#Tercumeden istifade eleme ay anasi qehbe
-#Tercumeni istifade eden peyserdi (qizdirsa qehbedi)
-#Ekenin anasinin amciğini sapalagliyim
-# @Mr_HD_20
-
 import re
 import os
 from telethon.tl.types import DocumentAttributeFilename, InputMessagesFilterDocument
@@ -160,7 +153,7 @@ async def pins(event):
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək üçün__ `.brend {cmdhelp}` __yazın.__')
+                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək üçün__ `.az {cmdhelp}` __yazın.__')
             else:
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
                 userbot.cmdhelp.CmdHelp(dosya).add_warning('Komutlar bulunamadı!').add()
@@ -169,12 +162,12 @@ async def pins(event):
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək üçün__ `.brend {cmdhelp}` __yazın.__')
+                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək üçün__ `.az {cmdhelp}` __yazın.__')
             else:
                 dosyaAdi = reply_message.file.name.replace('.py', '')
                 extractCommands(dosya)
                 await reply_message.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək üçün__ `.brend {dosyaAdi}` __yazın.__')
+                return await event.edit(f'**Modul uğurla yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək üçün__ `.az {dosyaAdi}` __yazın.__')
 
 @register(outgoing=True, pattern="^.premove ?(.*)")
 async def premove(event):
@@ -210,7 +203,7 @@ async def psend(event):
         return
 
     if os.path.isfile(f"./userbot/modules/{modul}.py"):
-        await event.client.send_file(event.chat_id, f"./userbot/modules/{modul}.py", caption=LANG['BREND_PLUGIN_CAPTION'])
+        await event.client.send_file(event.chat_id, f"./userbot/modules/{modul}.py", caption=LANG['USERAZ_PLUGIN_CAPTION'])
         await event.delete()
     else:
         await event.edit(LANG['NOT_FOUND_PLUGIN'])
