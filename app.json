@@ -5,7 +5,7 @@
   "keywords": [
     "telegram",
     "userbot",
-	"Brend",
+	"USERAZ",
     "plugin",
     "modular",
     "productivity"
@@ -217,7 +217,7 @@
     },
     "PAKET_ISMI": {
       "description": "Dızla komutu paket ismini belirleyin. Paket ismi şöyle olacaktır: @KullanıcıAdın verdiğin değer 1",
-      "value": "@BrendUserBot Paketi",
+      "value": "@Userazbot Paketi",
       "required": false
     },
     "OTOMATIK_KATILMA": {
