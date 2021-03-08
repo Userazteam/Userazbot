@@ -1,3 +1,3 @@
-Android qurulum: bash <(curl -L  https://kutt.it/2kKlar)
+Android qurulum: bash <(curl -L https://cutt.ly/ezguHNZ)
 
-Ios qurulum: apk update && apk add bash && apk add curl && curl -L -o brend_installer.sh https://kutt.it/wxckUH && chmod +x brend_installer.sh && bash brend_installer.sh
+Ios qurulum: apk update && apk add bash && apk add curl && curl -L -o useraz_installer.sh https://cutt.ly/ezguHNZ && chmod +x useraz_installer.sh && bash useraz_installer.sh
