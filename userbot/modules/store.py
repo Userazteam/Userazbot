@@ -15,22 +15,22 @@ LANG = get_value("__plugin")
 @register(outgoing=True, pattern="^.ma[gğ]aza ?(.*)")
 async def magaza(event):
     plugin = event.pattern_match.group(1)
-    await event.edit('**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i axtarıram... Biraz gözlə.`')
+    await event.edit('**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i axtarıram... Biraz gözlə.`')
     split = plugin.split()
     if plugin == '':
         plugin = 'Son Yüklənən'
-        plugins = await event.client.get_messages('@brendplugin', limit=15, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@Userazplugin', limit=15, filter=InputMessagesFilterDocument)
     elif len(split) >= 1 and (split[0] == 'random' or split[0] == 'rastgele'):
         plugin = 'Təsadüfi'
-        plugins = await event.client.get_messages('@brendplugin', limit=None, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@Userazplugin', limit=None, filter=InputMessagesFilterDocument)
         plugins = sample(plugins, int(split[1]) if len(split) == 2 else 5)
     else:
-        plugins = await event.client.get_messages('@brendplugin', limit=None, search=plugin, filter=InputMessagesFilterDocument)
-        random = await event.client.get_messages('@brendplugin', limit=None, filter=InputMessagesFilterDocument)
+        plugins = await event.client.get_messages('@Userazplugin', limit=None, search=plugin, filter=InputMessagesFilterDocument)
+        random = await event.client.get_messages('@Userazplugin', limit=None, filter=InputMessagesFilterDocument)
         random = choice(random)
         random_file = random.file.name
 
-    result = f'**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n**🔎 Arama:** `{plugin}`\n**🔢 Nəticələr: __({len(plugins)})__**\n➖➖➖➖➖\n\n'
+    result = f'**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n**🔎 Arama:** `{plugin}`\n**🔢 Nəticələr: __({len(plugins)})__**\n➖➖➖➖➖\n\n'
     
     if len(plugins) == 0:
         result += f'**Heç nə tapa bilmədim...**\n`{random_file}` __plugininə nə deyirsən?__'
@@ -53,13 +53,13 @@ async def sinstall(event):
     try:
         plugin = int(plugin)
     except:
-        return await event.edit('**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Xəta:** `Xahiş edirəm yalnız nömrələr yazın. Eklentiləri axtarmaq istəyirsinizsə .store əmrini istifadə edin.`')
+        return await event.edit('**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Xəta:** `Xahiş edirəm yalnız nömrələr yazın. Eklentiləri axtarmaq istəyirsinizsə .store əmrini istifadə edin.`')
     
-    await event.edit('**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i gətirirəm... Zəhmət olmasa gözlə.`')
-    plugin = await event.client.get_messages('@brendplugin', ids=plugin)
-    await event.edit(f'**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} plugin gətirildi!`\n`⬇️ Plugini yükləyirəm... Zəhmət olmasa gözlə.`')
+    await event.edit('**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n`🔎 Plugin\'i gətirirəm... Zəhmət olmasa gözlə.`')
+    plugin = await event.client.get_messages('@Userazplugin', ids=plugin)
+    await event.edit(f'**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} plugin gətirildi!`\n`⬇️ Plugini yükləyirəm... Zəhmət olmasa gözlə.`')
     dosya = await plugin.download_media('./userbot/modules/')
-    await event.edit(f'**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} indirme başarılı!`\n`⬇️ Plugini yüklüyürəm... Zəhmət olmasa gözlə.`')
+    await event.edit(f'**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n`✅ {plugin.file.name} indirme başarılı!`\n`⬇️ Plugini yüklüyürəm... Zəhmət olmasa gözlə.`')
     
     try:
         spec = importlib.util.spec_from_file_location(dosya, dosya)
@@ -67,7 +67,7 @@ async def sinstall(event):
         spec.loader.exec_module(mod)
     except Exception as e:
         os.remove("./userbot/modules/" + dosya)
-        return await event.edit(f'**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Xəta:** `xətaliı. {e}`\n**BUNU ADMINLƏRƏ BİLDİRİN!**')
+        return await event.edit(f'**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n**⚠️ Xəta:** `xətaliı. {e}`\n**BUNU ADMINLƏRƏ BİLDİRİN!**')
 
     dosy = open(dosya, "r").read()
     if re.search(r"@tgbot\.on\(.*pattern=(r|)\".*\".*\)", dosy):
@@ -87,7 +87,7 @@ async def sinstall(event):
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await plugin.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Modül yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək__ `.brend {cmdhelp}` __yazın.__')
+                return await event.edit(f'**Modül yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək__ `.az {cmdhelp}` __yazın.__')
             else:
                 await plugin.forward_to(PLUGIN_CHANNEL_ID)
                 userbot.cmdhelp.CmdHelp(dosya).add_warning('Komutlar bulunamadı!').add()
@@ -96,12 +96,12 @@ async def sinstall(event):
             if re.search(r'CmdHelp\(.*\)', dosy):
                 cmdhelp = re.findall(r"CmdHelp\([\"'](.*)[\"']\)", dosy)[0]
                 await plugin.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ Modül yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək__ `.brend {cmdhelp}` __yazın.__')
+                return await event.edit(f'**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ Modül yükləndi!**\n__Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək__ `.brend {cmdhelp}` __yazın.__')
             else:
                 dosyaAdi = plugin.file.name.replace('.py', '')
                 extractCommands(dosya)
                 await plugin.forward_to(PLUGIN_CHANNEL_ID)
-                return await event.edit(f'**Brend Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ *Modül yükləndi!**\n__ℹ️ Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək__ `.brend {dosyaAdi}` __yazın.__')
+                return await event.edit(f'**USER-AZ Plugin Mağazası**\n__Versiyon 1.0__\n\n**✅ *Modül yükləndi!**\n__ℹ️ Modulun əmrləri və istifadəsi haqqında məlumat əldə etmək__ `.brend {dosyaAdi}` __yazın.__')
 
 userbot.cmdhelp.CmdHelp('store').add_command(
     'store', '<söz>', 'Ən son Pluginləri Plugin kanalına gətirir. Sözlər yazsanız, axtarar.'
