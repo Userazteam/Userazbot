@@ -1,7 +1,7 @@
 {
     "LANGUAGE": "English",
     "LANGCODE": "en",
-    "AUTHOR": "@upp4r/@selaxg/@willyshakespeare",
+    "AUTHOR": "@samil",
     "STRINGS": {
         "__plugin": {
             "REPLY_FOR_PORT": "`Please give a file for Plugin-Port`",
@@ -29,11 +29,11 @@
             "ALREADY_DELETED": "`The Plugin file has already deleted.`",
             "NOT_FOUND_PLUGIN": "`Maybe there was such a plugin, maybe there wasn't. But it's definitely not right now.`",
             "PLUG_DELETED": "`Plugin deleted successfully!` '**You need to restart operations to be implemented.**",
-            "BREND_PLUGIN_CAPTION": "This is a plugin of [Brend](https://t.me/BrendUserBot)."
+            "USERAZ_PLUGIN_CAPTION": "This is a plugin of [USER-AZ](https://t.me/Userazbot)."
         },
-        "__brend": {
-            "NEED_PLUGIN": "Please specify an Brend module name.",
-            "NEED_MODULE": "Please specify which Brend module you want help for !!\nUse: .brend <module name>"
+        "__useraz": {
+            "NEED_PLUGIN": "Please specify an USER-AZ module name.",
+            "NEED_MODULE": "Please specify which USER-AZ module you want help for !!\nUse: .az <module name>"
         },
         "__helpme": {
             "NO_BOT": "`The Bot doesn't work! Please set the Bot token and Username correctly. Module aborted.`"
@@ -49,7 +49,7 @@
             "INVALID_MEDIA": "```Invalid media.```",
             "PRIVATE": "`This command cannot be used in a private message!`",
             "EKLE": "`Added successfully`",
-            "BRAIN": "`Error! I can't do this to the Brend Admin.`",
+            "BRAIN": "`Error! I can't do this to the USER-AZ Admin.`",
             "BANNING": "`User banning...`",
             "ALREADY_GBANNED": "`Error! User already globally banned.`",
             "GBANNED_REASON": "`The user is banned globally!`\n**Cause:**",
@@ -108,7 +108,7 @@
             "ALREADY": "`It looks like %s is already changing automatically. `",
             "SETTING": "`%s setting...`",
             "BIO": "📅 Date: {tarih} | ⌚️ Time: {saat} | ",
-            "NICK": "@BrendUserBot",
+            "NICK": "@Userazbot",
             "SETTED": "`%s set :)`",
             "NAME": "⏰%s"
         },
@@ -144,8 +144,8 @@
             "EFECTING": "`Applying effect...`",
             "NOT_FOUND_EFECT": "**The effect you specified was not found! ** `Effects you can use:\" çocuk/robot/earrape/fast/interference/echo`",
             "NEED_VIDEO": "`Please reply to a Video!`",
-            "WITH_BREND": "`Effect applied with` @BrendUserbot",
-            "WITH_BREND_GIF": "`Turned to Gif with` @BrendUserbot",
+            "WITH_USERAZ": "`Effect applied with` @Userazbot",
+            "WITH_USERAZ_GIF": "`Turned to Gif with` @Userazbot",
             "CONVERTING_TO_GIF": "Turning to gif ...",
             "UPLOADING_GIF": "` Loading Gif ... `",
             "ERROR": "I couldn't turn it into a gif :/"
@@ -252,7 +252,7 @@
         },
         "galeri": {
             "ADDED_LIST": "`The photo has been queued.`",
-            "INVALID_URL": "`You have entered an invalid image URL. If you have no idea of usage,` `.brend galeri` `please write.`",
+            "INVALID_URL": "`You have entered an invalid image URL. If you have no idea of usage,` `.az galeri` `please write.`",
             "EXAMPLE": "`Please enter a picture address. As an example: ` `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`",
             "LIST": "Queued Photos",
             "REMOVED": "** The next photo was successfully removed **",
@@ -260,7 +260,7 @@
             "NEED_NUMBER": "Please indicate the order of the image. Example:",
             "WORKING": "`The gallery is already working.`",
             "STARTED": "`The gallery is working`",
-            "NEED_PHOTO": "You need to add photos for the gallery work. If you do not know how to add it, you may know about use with the .brend galeri",
+            "NEED_PHOTO": "You need to add photos for the gallery work. If you do not know how to add it, you may know about use with the .az galeri",
             "STOPPED": "`The Gallery is stopped!`",
             "ALREADY_STOP": "`Gallery isn't working anyway. `",
             "INVALID": "**Unknown command** Usage:\n\nAdd a photo to the Gallery: `.galeri ekle https://i.resimyukle.xyz/7Qbbc9.jpeg`\nSee the gallery list: `.galeri liste `\nDeleting an ordinary photograph: `.galeri sil <number>`"
@@ -331,16 +331,16 @@
             "REPLY_TO_FILE": "`Reply to a file.`",
             "QUERY": "Query",
             "RESULT": "Result",
-            "NEED_MUCH_DATA_FOR_RANDOM": "`2 or more items are required. Enter the .brend random command for more information.`",
+            "NEED_MUCH_DATA_FOR_RANDOM": "`2 or more items are required. Enter the .az random command for more information.`",
             "SLEEP_DESC": "Usage: ` .sleep [saniye]`",
             "SLEEPING": "`I sleep with the snorkhead ...`",
             "GOODMORNIN_YALL": "`Good Morning!`",
             "GOODBYE_MFRS": "`I'll see you... *Windows XP shutdown sound* `",
             "RESTARTING": "`Bot restarting...`",
-            "SUPPORT_GROUP": "[From Here](http://t.me/BrendSupport) you can contact our support group.",
+            "SUPPORT_GROUP": "[From Here](http://t.me/Userazsup) you can contact our support group.",
             "CREATOR": "This bot was developed by\n[Hüseyn](https://t.me/Mr_HD_20)",
-            "README": "[Brend README.md](https://github.com/brendsupport/brenduserbot/blob/main/README.md)",
-            "REPO": "[Brend Repo](https://github.com/brendsupport/brenduserbot)",
+            "README": "[USER-AZ README.md](https://github.com/Userazteam/Userazbot/blob/main/README.md)",
+            "REPO": "[USER-AZ Repo](https://github.com/Userazteam/Userazbot)",
             "CHECK_LOGS": "`Check userbot logs for decoded message!`"
         },
         "notes": {
@@ -488,7 +488,7 @@
             "SEARCHING": "`Song searching...`",
             "BLOCKED_DEEZER": "`Mmmh, I think you blocked` @DeezerMusicBot `Please open the block.`",
             "NOT_FOUND": "` The song you were looking for was not found! I'm sorry.`",
-            "UPLOADED_WITH": "Upload with @BrendUserbot",
+            "UPLOADED_WITH": "Upload with @Userazbot",
             "USAGE": "`Usage:` `.song song name/youtube url/spotify url`",
             "SEARCHING_SPOT": "Song searching and downloading please wait!",
             "DOWNLOADED": "`Download is successfully please wait.`",
@@ -523,7 +523,7 @@
             "QUERY": "Query",
             "RESULT": "Result",
             "NOT_FOUND": "Nothing found",
-            "EXAMPLE": "`Use the .brend pip command to see an example. `"
+            "EXAMPLE": "`Use the .useraz pip command to see an example. `"
         },
         "time": {
             "CLOCK": "Time here",
@@ -542,7 +542,7 @@
             "NOT_FOUND": "folder not found.",
             "GIT_ERROR": "Git error!",
             "NOT_GIT": "folder does not look like a git repo. \nBut you can solve this problem by forcibly updating the bot with the .update now command.",
-            "INVALID_BRANCH": "**[UPDATER]: * * ` I think you've modified the Brend bot and you're using your own branch.\nThis confuses the Updater,\nWhere will the update be pulled?\nPlease use the Brend bot from the official repo.`",
+            "INVALID_BRANCH": "**[UPDATER]: * * ` I think you've modified the USER-AZ bot and you're using your own branch.\nThis confuses the Updater,\nWhere will the update be pulled?\nPlease use the Brend bot from the official repo.`",
             "UPDATE": "\n`Your bot` **completely up to date!** `Branch:` **{}**\n",
             "WAS_UPDATE": "New update available for ** { }!\n\nChanges: **\n ` {} `",
             "BIG": "`The change list is too large, you should display it as a file.`",
