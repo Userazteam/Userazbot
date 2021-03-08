@@ -73,7 +73,7 @@ async def tts2(query):
             "`Yazıdan sese çevirmek için bir metin gir. Kullanım: .tts2 erkek/kadın merhaba`")
         return
 
-    mp3 = get(f"https://texttospeech.responsivevoice.org/v1/text:synthesize?text={message}&lang={TTS_LANG}&engine=g3&name=&pitch=0.5&rate=0.5&volume=1&key=BrendUserbot&gender={cins}").content
+    mp3 = get(f"https://texttospeech.responsivevoice.org/v1/text:synthesize?text={message}&lang={TTS_LANG}&engine=g3&name=&pitch=0.5&rate=0.5&volume=1&key=Userazbot&gender={cins}").content
     with open("h.mp3", "wb") as audio:
         audio.write(mp3)
     await query.client.send_file(query.chat_id, "h.mp3", voice_note=True)
@@ -208,8 +208,8 @@ async def haber(event):
 @register(outgoing=True, pattern="^.karbon ?(.*)")
 async def karbon(e):
     cmd = e.pattern_match.group(1)
-    if os.path.exists("@BrendUserBot-Karbon.jpg"):
-        os.remove("@BrendUserBot-Karbon.jpg")
+    if os.path.exists("@Userazbot-Karbon.jpg"):
+        os.remove("@Userazbot-Karbon.jpg")
 
     if len(cmd) < 1:
         await e.edit("Kullanım: .karbon mesaj")    
@@ -220,10 +220,10 @@ async def karbon(e):
 
     r = get(f"https://carbonnowsh.herokuapp.com/?code={cmd}")
 
-    with open("@BrendUserBot-Karbon.jpg", 'wb') as f:
+    with open("@Userazbot-Karbon.jpg", 'wb') as f:
         f.write(r.content)    
 
-    await e.client.send_file(e.chat_id, file="@BrendUserBot-Karbon.jpg", force_document=True, caption="[BrendUserBot](https://t.me/Brenduserbot) ile oluşturuldu.")
+    await e.client.send_file(e.chat_id, file="@Userazbot-Karbon.jpg", force_document=True, caption="[USER-AZ](https://t.me/Userazbot) ile oluşturuldu.")
     await e.delete()
 
 @register(outgoing=True, pattern="^.crblang (.*)")
