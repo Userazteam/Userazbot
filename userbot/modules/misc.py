@@ -140,13 +140,13 @@ async def raw(event):
             caption="`Həll olunan mesaj`")
 
 CmdHelp('misc').add_command(
-    'random', '<seçim1> <seçim2> ... <seçimN>', 'Seçim siyahısından random bir seçim edər', 'random brend uniborg userge'
+    'random', '<seçim1> <seçim2> ... <seçimN>', 'Seçim siyahısından random bir seçim edər', 'random USER-AZ uniborg userge'
 ).add_command(
-    'yuxu', '<zaman>', 'Brend də bir insandır və o da yorulur. Hərdən biraz yatsın.', 'sleep 30'
+    'yuxu', '<zaman>', 'USER-AZ də bir insandır və o da yorulur. Hərdən biraz yatsın.', 'sleep 30'
 ).add_command(
     'sondur', None, 'Nostaljik bir şekildə botunuzu söndürün.'
 ).add_command(
-    'repo', None, 'Brend botunun GitHub\'daki reposuna giden bir bağlantı.'
+    'repo', None, 'USER-AZ botunun GitHub\'daki reposuna giden bir bağlantı.'
 ).add_command(
     'sahib', None, 'Bu gözəl botun sahibinin kim olduğunu deyir.'
 ).add_command(
