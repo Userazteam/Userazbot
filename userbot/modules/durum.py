@@ -22,7 +22,7 @@ async def durums(event):
     await event.edit(f"""
 **Python {LANG['VERSION']}:** `{python_version()}`
 **TeleThon {LANG['VERSION']}:** `{version.__version__}` 
-**Brend {LANG['VERSION']}:** `{BREND_VERSION}`
+**USERAZ {LANG['VERSION']}:** `{USERAZ_VERSION}`
 
 **{LANG['PLUGIN_COUNT']}:** `{len(CMD_HELP)}`
 
