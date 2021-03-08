@@ -542,7 +542,7 @@
             "NOT_FOUND": "folder not found.",
             "GIT_ERROR": "Git error!",
             "NOT_GIT": "folder does not look like a git repo. \nBut you can solve this problem by forcibly updating the bot with the .update now command.",
-            "INVALID_BRANCH": "**[UPDATER]: * * ` I think you've modified the USER-AZ bot and you're using your own branch.\nThis confuses the Updater,\nWhere will the update be pulled?\nPlease use the Brend bot from the official repo.`",
+            "INVALID_BRANCH": "**[UPDATER]: * * ` I think you've modified the USER-AZ bot and you're using your own branch.\nThis confuses the Updater,\nWhere will the update be pulled?\nPlease use the USER-AZ bot from the official repo.`",
             "UPDATE": "\n`Your bot` **completely up to date!** `Branch:` **{}**\n",
             "WAS_UPDATE": "New update available for ** { }!\n\nChanges: **\n ` {} `",
             "BIG": "`The change list is too large, you should display it as a file.`",
