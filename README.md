@@ -19,7 +19,7 @@
 
 **iOS:** iSH açın ve bu kodu yapışdırın: <br> `apk update && apk add bash && apk add curl && curl -L -o useraz_installer.sh https://cutt.ly/ezguHNZ && chmod +x useraz_installer.sh && bash useraz_installer.sh`
 
-**Windows 10:** [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l#activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın: <br> `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/aYTzCx')`
+**Windows 10:** [Python](https://www.microsoft.com/en-us/p/python-38/9mssztt1n39l#activetab=pivot:overviewtab) indirin ardından PowerShell bu kodu yapıştırın: <br> `Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://kutt.it/BqRltH')`
 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Userazteam/Userazbot)
