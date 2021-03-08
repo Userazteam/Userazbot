@@ -79,7 +79,7 @@ async def cevir(event):
             print(f"lottie_convert.py '{video}' out.gif")
             gif = await asyncio.create_subprocess_shell(f"lottie_convert.py '{video}' out.gif")
         else:
-            gif = await asyncio.create_subprocess_shell(f"ffmpeg -i '{video}' -filter_complex 'fps=20,scale=320:-1:flags=lanczos,split [o1] [o2];[o1] palettegen [p]; [o2] fifo [o3];[o3] [p] paletteuse' brend.gif")
+            gif = await asyncio.create_subprocess_shell(f"ffmpeg -i '{video}' -filter_complex 'fps=20,scale=320:-1:flags=lanczos,split [o1] [o2];[o1] palettegen [p]; [o2] fifo [o3];[o3] [p] paletteuse' useraz.gif")
         await gif.communicate()
         await event.edit(f"`{LANG['UPLOADING_GIF']}`")
 
