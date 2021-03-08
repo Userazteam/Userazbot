@@ -17,7 +17,7 @@ async def shazam(event):
         reply_message = await event.get_reply_message()
         dosya = await reply_message.download_media()
 
-        await event.edit('`Səs faylı brend formatına çevrilir...`')
+        await event.edit('`Səs faylı USER-AZ formatına çevrilir...`')
         audio = AudioSegment.from_file(dosya)
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(16000)
