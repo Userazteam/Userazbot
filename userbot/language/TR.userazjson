@@ -587,7 +587,7 @@
             "NOT_FOUND": "klasörü bulunamadı.",
             "GIT_ERROR": "Git hatası!",
             "NOT_GIT": "klasörü bir git reposu gibi görünmüyor. \nFakat bu sorunu .update now komutuyla botu zorla güncelleyerek çözebilirsin.",
-            "INVALID_BRANCH": "**[UPDATER]:**` Galiba USER-AZ botunu modifiye ettin ve kendi branşını kullanıyorsun.\nBu durum güncelleyicinin kafasını karıştırıyor,\nGüncelleme nereden çekilecek?\nLütfen Brend botunu resmi repodan kullan.`",
+            "INVALID_BRANCH": "**[UPDATER]:**` Galiba USER-AZ botunu modifiye ettin ve kendi branşını kullanıyorsun.\nBu durum güncelleyicinin kafasını karıştırıyor,\nGüncelleme nereden çekilecek?\nLütfen USER-AZ botunu resmi repodan kullan.`",
             "UPDATE": "\n`Botun` **tamamen güncel!** `Branch:` **{}**\n",
             "WAS_UPDATE": "**{} için yeni güncelleme mevcut!\n\nDeğişiklikler:**\n`{}`",
             "BIG": "`Değişiklik listesi çok büyük, dosya olarak görüntülemelisin.`",
