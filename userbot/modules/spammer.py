@@ -105,5 +105,5 @@ CmdHelp('spammer').add_command(
 ).add_command(
     'delayspam', '<gecikme> <miktar> <metin>', 'Biraz gecikmə ilə spam atar.'
 ).add_warning(
-    'Məsuliyyəti siz daşıyırsız Brend yox!'
+    'Məsuliyyəti siz daşıyırsız USER-AZ yox!'
 ).add()
