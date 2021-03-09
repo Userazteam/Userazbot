@@ -1,11 +1,11 @@
 <div align="center">
-  <img src="https://i.imgyukle.com/2021/03/08/N56DT1.jpg" width="200" height="200">
+  <img src="https://telegra.ph/file/fb9ddf3b324d40c34c5cf.jpg" width="200" height="200">
   <h1>USER-AZ</h1>
 </div>
 <p align="center">
     USER-AZ Telegram istifadəsini rahatlaşdıracaq və taməmən pulsuz və açıq qaynaqlıdır
     <br>
-        <a href="https://t.me/AsenaUserBot">Telegram Kanalı</a>
+        <a href="https://t.me/Userazbot">Telegram Kanalı</a>
     <br>
 </p>
 
