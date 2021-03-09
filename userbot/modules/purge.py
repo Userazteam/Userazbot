@@ -9,9 +9,9 @@ from userbot.cmdhelp import CmdHelp
 from userbot.language import get_value
 LANG = get_value("purge")
 
-@register(outgoing=True, pattern="^.temizle$")
+@register(outgoing=True, pattern="^.purge$")
 async def fastpurger(purg):
-
+    """ .purge  """
     chat = await purg.get_input_chat()
     msgs = []
     itermsg = purg.client.iter_messages(chat, min_id=purg.reply_to_msg_id)
@@ -37,14 +37,14 @@ async def fastpurger(purg):
     if BOTLOG:
         await purg.client.send_message(
             BOTLOG_CHATID,
-            "Hədəflənən " + str(count) + " mesaj müvəffəqiyyətlə silindi.")
+            "Hədəflənən " + str(count) + " mesaj uğurla silindi.")
     await sleep(2)
     await done.delete()
 
 
-@register(outgoing=True, pattern="^.mesajimisil")
+@register(outgoing=True, pattern="^.purgeme")
 async def purgeme(delme):
-    
+    """ .purgeme """
     message = delme.text
     count = int(message[9:])
     i = 1
@@ -63,15 +63,15 @@ async def purgeme(delme):
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "Hədəflənən " + str(count) + " mesaj müvəffəqiyyətlə silindi.")
+            "Hədəflənən " + str(count) + " mesaj uğurla silindi.")
     await sleep(2)
     i = 1
     await smsg.delete()
 
 
-@register(outgoing=True, pattern="^.sil$")
+@register(outgoing=True, pattern="^.del$")
 async def delete_it(delme):
-
+    """ .del  """
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
         try:
@@ -79,16 +79,16 @@ async def delete_it(delme):
             await delme.delete()
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Hədəflənən mesajın silinməsi müvəffəqiyyətlə tamamlandı")
+                    BOTLOG_CHATID, "Hədəflənən mesajın silinməsi uğurla başa çatdı")
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
                     BOTLOG_CHATID, "Bu mesajı silə bilmirəm.")
 
 
-@register(outgoing=True, pattern="^.d[uü]z{eə]lt")
+@register(outgoing=True, pattern="^.edit")
 async def editer(edit):
-
+    """ .editme """
     message = edit.text
     chat = await edit.get_input_chat()
     self_id = await edit.client.get_peer_id('me')
@@ -102,12 +102,12 @@ async def editer(edit):
         i = i + 1
     if BOTLOG:
         await edit.client.send_message(BOTLOG_CHATID,
-                                       "Mesaj düzəltmə müvəffəqiyyətlə tamamlandı")
+                                       "Mesaj düzəltmə sorğusu uğurla edildi")
 
 
-@register(outgoing=True, pattern="^.gizli")
+@register(outgoing=True, pattern="^.sd")
 async def selfdestruct(destroy):
-
+    """ .sd  """
     message = destroy.text
     counter = int(message[4:6])
     text = str(destroy.text[6:])
@@ -117,16 +117,16 @@ async def selfdestruct(destroy):
     await smsg.delete()
     if BOTLOG:
         await destroy.client.send_message(BOTLOG_CHATID,
-                                          "gizli sorğusu uğurla başa çatıb")
+                                          "sd sorğusu uğurla başa çatdı")
 
 CmdHelp('purge').add_command(
-    'temizle', None, 'Hedeflenen yanıttan başlayarak tüm mesajları temizler.'
+    'purge', None, 'Hədəflənən cavabdan başlayaraq bütün mesajları təmizləyər.'
 ).add_command(
-    'mesajimisil', 'Hədəflənən mesajdan başlayaraq öz mesajlarınızı silər.'
+    'purgeme', '<sayı>', 'Hədəflənən cavabdan başlayaraq öz mesajlarınızı təmizləyər.'
 ).add_command(
-    'sil', '<cavab>', 'Göstərdiyiniz mesajı silir.'
+    'del', '<cavab>', 'Cavab verilən mesajı silər.'
 ).add_command(
-    'duzelt və ya düzəlt', '<yeni mesaj>', 'Cavab verdiyiniz mesajı yeni mesaj ile dəyişdirir.'
+    'edit', '<yeni mesaj>', 'Cavab verdiyiniz mesajı yeni mesaj ilə dəyişdirər.'
 ).add_command(
-    'gizli', '<saniyə> <mesaj>', 'x saniye içində özünü yox edən bir mrsaj düzəldər.'
+    'sd', '<x> <mesaj>', 'x saniyə içində özünü yox edən bir mesaj yaradar.'
 ).add()
