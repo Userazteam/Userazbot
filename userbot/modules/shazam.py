@@ -8,7 +8,7 @@ from os import remove
 import urllib.parse
 from userbot.cmdhelp import CmdHelp
 
-@register(outgoing=True, pattern="^shazam")
+@register(outgoing=True, pattern="^/shazam")
 async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
@@ -46,8 +46,8 @@ async def shazam(event):
                 await event.edit(f'`İlk {(signature_generator.samples_processed / 16000)} saniyəni heç yerdə eşitmədim. Dur birazdaha dinləyirəm`')
         
         if not 'track' in sarki:
-            return await event.edit('`Təsüf ki bu mahnını heç yerdə eşitməmişəm.n\Bəlkə qrupdan kimsə kömək etdi və ya biraz daha aydın eşidəcəyim səs atın zəhmət olmasa`')
-        await event.edit('`Mahnını tapdım... Məlumatları tapdım...`')
+            return await event.edit('`Təsüf ki bu mahnını heç yerdə eşitməmişəm. Bəlkə qrupdan kimsə kömək etdi və ya biraz daha aydın eşidəcəyim səs atın zəhmət olmasa`')
+        await event.edit('`Yes Bu Mahnını Bilirəm`')
         Caption = f'**Mahnı:** [{sarki["track"]["title"]}]({sarki["track"]["url"]})\n'
         if 'artists' in sarki['track']:
             Caption += f'**Oxuyan(lar):** [{sarki["track"]["subtitle"]}](https://www.shazam.com/artist/{sarki["track"]["artists"][0]["id"]})\n'
