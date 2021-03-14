@@ -8,7 +8,7 @@ from os import remove
 import urllib.parse
 from userbot.cmdhelp import CmdHelp
 
-@register(outgoing=True, pattern="^/shazam")
+@register(outgoing=True, pattern="^Shazam")
 async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
@@ -17,7 +17,7 @@ async def shazam(event):
         reply_message = await event.get_reply_message()
         dosya = await reply_message.download_media()
 
-        await event.edit('`🔊 Biraz daha çox az qaldı...`')
+        await event.edit('`🔊 Mahnını xatırlamağa çalışıram`')
         audio = AudioSegment.from_file(dosya)
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(16000)
@@ -32,7 +32,7 @@ async def shazam(event):
             
         results = '{"error": "Not found"}'
         sarki = None
-        await event.edit('`Bunu deyəsən hardasa eşitmişəm.`')
+        await event.edit('`🔍 Shazamlanır...')
         while True:
             signature = signature_generator.get_next_signature()
             if not signature:
@@ -46,8 +46,8 @@ async def shazam(event):
                 await event.edit(f'`İlk {(signature_generator.samples_processed / 16000)} saniyəni heç yerdə eşitmədim. Dur birazdaha dinləyirəm`')
         
         if not 'track' in sarki:
-            return await event.edit('`Təsüf ki bu mahnını heç yerdə eşitməmişəm. Bəlkə qrupdan kimsə kömək etdi və ya biraz daha aydın eşidəcəyim səs atın zəhmət olmasa`')
-        await event.edit('`Bu Mahnını Bilirəm`')
+            return await event.edit('`Təsüf ki bu mahnını tapa bilmədim. Daha aydın eşidə biləcəyim səs ata bilərsiniz?`')
+        await event.edit('`Mahnını tapdım...`')
         Caption = f'**Mahnı:** [{sarki["track"]["title"]}]({sarki["track"]["url"]})\n'
         if 'artists' in sarki['track']:
             Caption += f'**Oxuyan(lar):** [{sarki["track"]["subtitle"]}](https://www.shazam.com/artist/{sarki["track"]["artists"][0]["id"]})\n'
