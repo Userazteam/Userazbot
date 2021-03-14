@@ -13,7 +13,7 @@ async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
     else:
-        await event.edit('🔍,Shazam* `Axtarır...`')
+        await event.edit('🔍*Shazam* `Axtarır...`')
         reply_message = await event.get_reply_message()
         dosya = await reply_message.download_media()
 
