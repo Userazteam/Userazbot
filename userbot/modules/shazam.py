@@ -8,7 +8,7 @@ from os import remove
 import urllib.parse
 from userbot.cmdhelp import CmdHelp
 
-@register(outgoing=True, pattern="^!song")
+@register(outgoing=True, pattern="^!shazam")
 async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
