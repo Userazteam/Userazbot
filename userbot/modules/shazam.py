@@ -8,7 +8,7 @@ from os import remove
 import urllib.parse
 from userbot.cmdhelp import CmdHelp
 
-@register(outgoing=True, pattern="^.shazam")
+@register(outgoing=True, pattern="^/shazam")
 async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
@@ -17,7 +17,7 @@ async def shazam(event):
         reply_message = await event.get_reply_message()
         dosya = await reply_message.download_media()
 
-        await event.edit('`🔊 Səsə qulağ asıram biraz gözlə...`')
+        await event.edit('`🔊 Biraz daha çox az qaldı...`')
         audio = AudioSegment.from_file(dosya)
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(16000)
