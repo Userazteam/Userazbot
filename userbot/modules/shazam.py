@@ -13,11 +13,11 @@ async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
     else:
-        await event.edit('🔊 Səsə qulağ asıram biraz gözlə...')
+        await event.edit('`🔊 Səsə qulağ asıram biraz gözlə...`')
         reply_message = await event.get_reply_message()
         dosya = await reply_message.download_media()
 
-        await event.edit('🔊 Səsə qulağ asıram biraz gözlə...')
+        await event.edit('`🔊 Səsə qulağ asıram biraz gözlə...`')
         audio = AudioSegment.from_file(dosya)
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(16000)
@@ -32,7 +32,7 @@ async def shazam(event):
             
         results = '{"error": "Not found"}'
         sarki = None
-        await event.edit('Bunu deyəsən hardasa eşitmişəm.')
+        await event.edit('`Bunu deyəsən hardasa eşitmişəm.`')
         while True:
             signature = signature_generator.get_next_signature()
             if not signature:
@@ -47,7 +47,7 @@ async def shazam(event):
         
         if not 'track' in sarki:
             return await event.edit('`Təsüf ki bu mahnını heç yerdə eşitməmişəm. Bəlkə qrupdan kimsə kömək etdi və ya biraz daha aydın eşidəcəyim səs atın zəhmət olmasa`')
-        await event.edit('`Yes Bu Mahnını Bilirəm`')
+        await event.edit('`Bu Mahnını Bilirəm`')
         Caption = f'**Mahnı:** [{sarki["track"]["title"]}]({sarki["track"]["url"]})\n'
         if 'artists' in sarki['track']:
             Caption += f'**Oxuyan(lar):** [{sarki["track"]["subtitle"]}](https://www.shazam.com/artist/{sarki["track"]["artists"][0]["id"]})\n'
