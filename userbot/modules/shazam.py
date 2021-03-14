@@ -8,16 +8,16 @@ from os import remove
 import urllib.parse
 from userbot.cmdhelp import CmdHelp
 
-@register(outgoing=True, pattern="^/shazam")
+@register(outgoing=True, pattern="^shazam")
 async def shazam(event):
     if not event.is_reply:
         return await event.edit('`Xahiş olunur bir səs faylına cavab verin!`')
     else:
-        await event.edit('🔍*Shazam* `Axtarır...`')
+        await event.edit('🔊 Səsə qulağ asıram biraz gözlə...')
         reply_message = await event.get_reply_message()
         dosya = await reply_message.download_media()
 
-        await event.edit('`Səs faylı SONG formatına çevrilir...`')
+        await event.edit('🔊 Səsə qulağ asıram biraz gözlə...')
         audio = AudioSegment.from_file(dosya)
         audio = audio.set_sample_width(2)
         audio = audio.set_frame_rate(16000)
@@ -32,7 +32,7 @@ async def shazam(event):
             
         results = '{"error": "Not found"}'
         sarki = None
-        await event.edit('` 🔍 Shazamlanır...`')
+        await event.edit('Bunu deyəsən hardasa eşitmişəm.')
         while True:
             signature = signature_generator.get_next_signature()
             if not signature:
@@ -43,10 +43,10 @@ async def shazam(event):
                 sarki = results
                 break
             else:
-                await event.edit(f'`İlk {(signature_generator.samples_processed / 16000)} saniyədə heç bir şey eşitmədim... yenidən yoxlayıram.`')
+                await event.edit(f'`İlk {(signature_generator.samples_processed / 16000)} saniyəni heç yerdə eşitmədim. Dur birazdaha dinləyirəm`')
         
         if not 'track' in sarki:
-            return await event.edit('`Təssüf ki Shazam bu səsi tapa bilmədi. Biraz daha aydın eşidəcəyim səs atın`')
+            return await event.edit('`Təsüf ki bu mahnını heç yerdə eşitməmişəm.n\Bəlkə qrupdan kimsə kömək etdi və ya biraz daha aydın eşidəcəyim səs atın zəhmət olmasa`')
         await event.edit('`Mahnını tapdım... Məlumatları tapdım...`')
         Caption = f'**Mahnı:** [{sarki["track"]["title"]}]({sarki["track"]["url"]})\n'
         if 'artists' in sarki['track']:
